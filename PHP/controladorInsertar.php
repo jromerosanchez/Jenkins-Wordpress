@@ -36,7 +36,7 @@ $SQLInsert = $productoNuevo->getInsertSQL();
 
 echo "La sentencia SQL a ejecutar es: ".$SQLInsert."<br>";
 
-$servername = "mysql";
+$servername = "bbdd";
 $username = "root";
 $password = "secret";
 
