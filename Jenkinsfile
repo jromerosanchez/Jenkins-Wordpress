@@ -10,7 +10,7 @@ pipeline {
                             }
                         }
                         stage('Deploy Montar docker') {
-                            steps {
+                            steps { 
                                 dir("/var/lib/jenkins/workspace/Jenkins-Wordpress/scripts"){
                                 echo 'Contruyendo...'
                                 sh 'docker-compose up -d'
