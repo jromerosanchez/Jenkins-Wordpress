@@ -23,7 +23,7 @@ services:
       MYSQL_PORT: 3306
     volumes:
       - ./.db_data:/var/lib/mysql
-      - /Jenkins-Wordpress/scripts/VendProdct.sql:/var/lib
+      - /Jenkins-Wordpress/scripts:/home/
       - ./.db_backup:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
