@@ -16,8 +16,15 @@ pipeline {
                                 sh 'docker-compose up -d'
                                         }
                             }
-                        
                         }
+                        stage('Deploy Composer') {
+                            steps {
+                               dir("/var/lib/jenkins/workspace/Jenkins-Wordpress/PHP"){
+                               echo 'Contruyendo composer...'
+                               sh 'composer kint-php/kint'
+                               sh 'composer install'
+                                                }
+                                    }
                 }
             post {
                 always {
