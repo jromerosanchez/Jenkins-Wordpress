@@ -32,7 +32,7 @@ $SQLDelete = $productoBorrado->getDeleteSQL();
 
 echo "La sentencia SQL a ejecutar es: ".$SQLDelete."<br>";
 
-$servername = "bbdd";
+$servername = "mysql";
 $username = "root";
 $password = "secret";
 
