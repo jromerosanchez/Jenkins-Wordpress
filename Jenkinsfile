@@ -16,6 +16,14 @@ pipeline {
                                 sh 'docker-compose up -d'
                                         }
                             }
+                        stage('Deploy Composer') {
+                            steps {
+                               echo 'Contruyendo composer...'
+                                sh 'composer kint-php/kint'
+                                sh 'composer install'
+                                
+                                                }
+                                    }
                         }
                 }
             post {
