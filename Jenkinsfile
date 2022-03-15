@@ -19,7 +19,7 @@ pipeline {
                         }
                        stage('Montar base de datos') {
                             steps {
-                               sh 'docker exec -T scripts-bbdd-1 bash -c "mysql -u root -p secret < /home/VendProdct.sql" $
+                               sh 'docker exec -T scripts-bbdd-1 bash -c "mysql -u root -p secret < /home/VendProdct.sql" 
                             }
                         }
                         stage('Deploy Composer') {
