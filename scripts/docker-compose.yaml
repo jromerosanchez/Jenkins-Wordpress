@@ -9,8 +9,8 @@ services:
     command: chmod a+rxw /var/www/html
     command: chmod a+rxw /var/log/apache2
     volumes:
-      - /root/iaw/PHP:/var/www/html
-      - /root/iaw/logs:/var/log/apache2
+      - ./PHP:/var/www/html
+      - ./logs:/var/log/apache2
     depends_on:
       - "bbdd"
 
@@ -22,8 +22,8 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_PORT: 3306
     volumes:
-      - /root/iaw/.db_data:/var/lib/mysql
-      - /root/iaw/scripts/clientProdct.sql:/docker-entrypoint-initdb.d
+      - ./.db_data:/var/lib/mysql
+      - ./scripts/VendProdct.sql:/docker-entrypoint-initdb.d
     ports:
       - 8045:3306
 
@@ -36,4 +36,4 @@ services:
     depends_on:
       - "bbdd"
     ports:
-      - "8081:80"
+      - "8081:81"
