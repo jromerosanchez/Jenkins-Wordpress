@@ -26,7 +26,7 @@ pipeline {
                             steps {
                                dir("/var/lib/jenkins/workspace/Jenkins-Wordpress/PHP"){
                                echo 'Contruyendo composer...'
-                               sh 'composer kint-php/kint'
+                               sh 'composer kint-php/kint || true'
                                sh 'php composer.phar install'
                                sh 'composer install'
                                                 }
