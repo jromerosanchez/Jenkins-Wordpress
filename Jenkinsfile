@@ -19,6 +19,7 @@ pipeline {
                         }
                        stage('Montar base de datos') {
                             steps {
+                               sh 'docker exec -i scripts-bbdd-1 bash -c chown -R mysql:mysql /usr/local/mysql/data'
                                sh 'docker exec -i scripts-bbdd-1 bash -c "mysql -u root -psecret  < /home/VendProdct.sql"'
                             }
                         }
