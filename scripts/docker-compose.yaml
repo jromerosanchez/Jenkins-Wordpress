@@ -9,7 +9,7 @@ services:
     command: chmod a+rxw /var/www/html
     command: chmod a+rxw /var/log/apache2
     volumes:
-      - ./PHP:/var/www/html
+      - /root/iaw/PHP:/var/www/html
       - ./logs:/var/log/apache2
     depends_on:
       - "bbdd"
@@ -23,7 +23,7 @@ services:
       MYSQL_PORT: 3306
     volumes:
       - ./.db_data:/var/lib/mysql
-      - /Jenkins-Wordpress/scripts:/home/
+      - /root/iaw/scripts:/home/
       - ./.db_backup:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
