@@ -25,6 +25,7 @@ pipeline {
                                sh 'composer install'
                                                 }
                                     }
+                        }
                 }
             post {
                 always {
