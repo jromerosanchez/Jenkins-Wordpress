@@ -19,16 +19,16 @@ pipeline {
                         }
                        stage('Montar base de datos') {
                             steps {                    
-                               sh 'sudo -s bolson docker exec -i scripts-bbdd-1 bash -c "cd /home/; mysql -u root -psecret < VendProdct.sql " || true'
+                               sh 'docker exec -i scripts-bbdd-1 bash -c "cd /home/; mysql -u root -psecret < VendProdct.sql " || true'
                             }
                         }
                         stage('Deploy Composer') {
                             steps {
                                dir("/var/lib/jenkins/workspace/Jenkins-Wordpress/PHP"){
                                echo 'Contruyendo composer...'
-                               sh 'composer kint-php/kint || true'
-                               sh 'php composer.phar install || true'
-                               sh 'composer install || true'
+                               sh 'composer kint-php/kint'
+                               sh 'php composer.phar install'
+                               sh 'composer install'
                                                 }
                                     }
                         }
