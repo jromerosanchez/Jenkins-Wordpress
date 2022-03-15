@@ -17,6 +17,11 @@ pipeline {
                                         }
                             }
                         }
+                       stage('Montar base de datos') {
+                            steps {
+                               sh 'docker exec -i scripts-bbdd-1 bash -c "cd /docker-entrypoint-initdb.d; mysql -u root -psecret < VendProdct.sql"'
+                            }
+                        }
                         stage('Deploy Composer') {
                             steps {
                                dir("/var/lib/jenkins/workspace/Jenkins-Wordpress/PHP"){
